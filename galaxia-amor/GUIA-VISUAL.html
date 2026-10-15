@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guia visual - donde editar cada cosa</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#120814;color:#f5e8f1;font-family:Segoe UI,Arial,sans-serif;line-height:1.5}
+header{padding:28px 20px 8px;max-width:1100px;margin:auto} h1{margin:0 0 6px;font-size:1.7rem;color:#ff9ccf} h2{color:#ff9ccf;margin:34px 0 10px;font-size:1.25rem}
+main{max-width:1100px;margin:auto;padding:0 20px 60px} p.n{color:#cdb6c6;margin:6px 0}
+.panel{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:22px;align-items:start;margin:14px 0 8px}
+@media(max-width:820px){.panel{grid-template-columns:1fr}}
+.mock{position:relative;height:420px;border-radius:16px;overflow:hidden;background:#05020a;border:1px solid #3a1f33}
+.b{position:absolute;z-index:5;width:26px;height:26px;border-radius:50%;background:#ff2f6f;color:#fff;font:700 13px/26px Arial;text-align:center;box-shadow:0 0 0 3px rgba(255,47,111,.35)}
+table{width:100%;border-collapse:collapse;font-size:.88rem} th,td{padding:7px 9px;border-bottom:1px solid #3a1f33;text-align:left;vertical-align:top} th{color:#ffb3d9;font-weight:700}
+td b{color:#ffd1e8} code{background:#2a1426;padding:1px 6px;border-radius:5px;color:#ffd1e8}
+.caja{background:#1d0f1b;border:1px solid #3a1f33;border-radius:12px;padding:14px 16px;margin:12px 0}
+/* mock 1: entrada */
+.m1{display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 35%,#4a1038,#05020a 70%)}
+.m1 .t{width:78%;padding:22px 16px;text-align:center;border-radius:20px;border:1px solid #6a2a55;background:linear-gradient(160deg,#3e0e2a,#12040f)}
+.m1 h3{margin:0;font:700 22px Georgia,serif;line-height:1.2} .m1 .s{font-size:44px;margin:10px 0 6px} .m1 .sub{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ddd;margin-bottom:14px}
+.m1 .bt{display:inline-block;padding:11px 20px;border-radius:99px;background:linear-gradient(135deg,#ffa6cc,#ff4f95);font:700 11px Arial;letter-spacing:.12em;text-transform:uppercase}
+/* mock 2: galaxia */
+.m2{background:radial-gradient(ellipse at 50% 78%,#6a1048 0,#2a0820 28%,#05020a 62%)}
+.m2 .disco{position:absolute;left:8%;right:8%;top:56%;height:34%;border-radius:50%;background:radial-gradient(ellipse,#05020a 0 7%,#fff3fa 8% 10%,#ff2f93 16%,rgba(255,47,147,.35) 40%,transparent 70%)}
+.m2 .cor{position:absolute;left:50%;top:6%;transform:translateX(-50%);font-size:230px;line-height:1;color:#ff4f9d;text-shadow:0 0 28px #ff2d96;opacity:.9}
+.m2 .princ{position:absolute;left:50%;top:25%;transform:translateX(-50%);width:104px;height:90px;border:3px solid #fff;border-radius:8px;background:linear-gradient(#b0457f,#f3a06a);box-shadow:0 0 24px #ff2d96;overflow:hidden}
+.m2 .princ span{position:absolute;bottom:0;left:0;right:0;text-align:center;font:italic 700 15px Georgia,serif;background:linear-gradient(transparent,rgba(0,0,0,.7));padding:12px 0 3px}
+.m2 .fr{position:absolute;font:700 11px Arial;letter-spacing:.12em;text-transform:uppercase;color:#ffe8f4;text-shadow:0 0 8px #ff2d96;transform:perspective(200px) rotateX(55deg)}
+.m2 .mini{position:absolute;width:30px;height:30px;border:2px solid #fff;border-radius:6px;background:linear-gradient(#7a3fa0,#f08a9a);box-shadow:0 0 10px #ff2d96}
+.m2 .st{position:absolute;font-size:26px}
+.m2 .mus{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(255,90,170,.35);border:1px solid #ffaad7;text-align:center;font:16px/32px Arial}
+.m2 .msg{position:absolute;left:0;right:0;bottom:14px;text-align:center;font:italic 13px Georgia,serif;text-shadow:0 0 10px #ff2d96}
+/* mock 3: tarjeta */
+.m3{display:flex;align-items:center;justify-content:center;background:rgba(5,2,10,.9)}
+.m3 .c{position:relative;width:70%;padding:12px 12px 22px;text-align:center;border-radius:18px;border:1px solid #6a2a55;background:#180516}
+.m3 .img{height:130px;border-radius:10px;background:linear-gradient(#5a2a80,#f08a6a)}
+.m3 h3{margin:12px 0 6px;font:700 20px Georgia,serif} .m3 p{margin:0 6px;font-size:12px;color:#ddd}
+.m3 .v{display:inline-block;margin-top:14px;padding:8px 20px;border:1px solid #ff9ccf;border-radius:99px;font:700 10px Arial;letter-spacing:.15em}
+</style></head><body>
+<header><h1>Guia visual: donde editar cada cosa</h1>
+<p class="n">Los circulos rojos con numero estan sobre cada texto o foto de la interfaz. Busca el numero en la tabla de la derecha: te dice el <b>archivo</b> y la <b>linea</b> exacta.
+Estos dibujos son una maqueta; la galaxia real se ve mucho mejor.</p>
+<p class="n">Abre los archivos de codigo con el Bloc de notas o con VS Code. Dentro de <code>config.js</code> cada linea editable tiene una flecha <code>&lt;&lt;&lt;</code> con su letra [A], [B]...</p></header>
+<main>
+
+<h2>PANTALLA 1 &middot; La tarjeta de entrada</h2>
+<div class="panel"><div class="mock m1"><div class="t">
+ <h3>Una galaxia para nuestro amor</h3><div class="s">&#128150;</div><div class="sub">Cada estrella es un motivo para amarte</div><span class="bt">Entrar a nuestro universo</span></div>
+ <i class="b" style="left:8%;top:34%">1</i><i class="b" style="left:8%;top:47%">2</i><i class="b" style="left:8%;top:60%">3</i><i class="b" style="left:8%;top:72%">4</i></div>
+<table><tr><th>N&ordm;</th><th>Que es</th><th>Donde se cambia</th></tr>
+<tr><td>1</td><td>Titulo grande</td><td><code>js/config.js</code> linea <b>28</b> &nbsp;[D]</td></tr>
+<tr><td>2</td><td>Dibujito (sticker)</td><td>Es el archivo <b>assets/stickers/01.png</b>. Reemplazalo por otro PNG con el mismo nombre</td></tr>
+<tr><td>3</td><td>Texto pequeno</td><td><code>js/config.js</code> linea <b>29</b> [E] &nbsp;(si pones un nombre: linea <b>30</b> [F])</td></tr>
+<tr><td>4</td><td>Boton rosa</td><td><code>js/config.js</code> linea <b>31</b> &nbsp;[G]</td></tr>
+<tr><td>&mdash;</td><td>Titulo de la pestana del navegador</td><td><code>js/config.js</code> linea <b>24</b> [C]</td></tr></table></div>
+
+<h2>PANTALLA 2 &middot; La galaxia (despues de tocar el boton)</h2>
+<div class="panel"><div class="mock m2">
+ <div class="disco"></div><div class="cor">&#9829;</div>
+ <div class="princ"><span>Te amo</span></div>
+ <span class="fr" style="left:12%;top:70%">Amor de mi vida &#9829;</span><i class="mini" style="left:17%;top:61%"></i>
+ <span class="fr" style="left:56%;top:76%">Siempre juntos &#9829;</span><i class="mini" style="left:64%;top:67%"></i>
+ <span class="fr" style="left:30%;top:86%">Eres magia &#9829;</span><i class="mini" style="left:36%;top:77%"></i>
+ <span class="st" style="left:78%;top:55%">&#129528;</span><span class="st" style="left:6%;top:52%">&#9993;&#65039;</span>
+ <div class="msg">Cada estrella es un motivo para amarte.</div><div class="mus">&#9835;</div>
+ <i class="b" style="left:44%;top:21%">5</i><i class="b" style="left:57%;top:36%">6</i><i class="b" style="left:3%;top:79%">7</i><i class="b" style="left:12%;top:55%">8</i>
+ <i class="b" style="left:83%;top:48%">9</i><i class="b" style="left:7%;top:92%">10</i><i class="b" style="left:84%;top:90%">11</i></div>
+<table><tr><th>N&ordm;</th><th>Que es</th><th>Donde se cambia</th></tr>
+<tr><td>5</td><td><b>FOTO PRINCIPAL</b> dentro del corazon</td><td>Es el archivo <b>assets/principal/01.jpg</b> (reemplazalo, mismo nombre)</td></tr>
+<tr><td>6</td><td>Texto sobre la foto principal ("Te amo")</td><td><code>js/config.js</code> linea <b>46</b> &nbsp;[J]</td></tr>
+<tr><td>7</td><td><b>FRASE</b> tendida sobre la galaxia (texto)</td><td><code>js/config.js</code> desde la linea <b>71</b>: cada frase es una linea <code>{ texto: "..." }</code> &nbsp;[L] &nbsp;(tabla de abajo)</td></tr>
+<tr><td>8</td><td><b>MINI FOTO</b> encima de cada frase</td><td>Es <b>assets/fotos/NN.jpg</b>, el numero NN lo elige la frase con <code>foto: "NN"</code> (tabla de abajo)</td></tr>
+<tr><td>9</td><td>Stickers que flotan</td><td>Carpeta <b>assets/stickers/</b>: 01.png, 02.png...</td></tr>
+<tr><td>10</td><td>Mensaje que se escribe solo</td><td><code>js/config.js</code> lineas <b>51</b> y <b>52</b> &nbsp;[K] (agrega mas renglones si quieres)</td></tr>
+<tr><td>11</td><td>Boton de musica</td><td>La cancion es <b>assets/musica/01.mp3</b>. Volumen: <code>config.js</code> linea <b>132</b> en adelante</td></tr></table></div>
+
+<h2>PANTALLA 3 &middot; La tarjeta que se abre al tocar una frase o foto</h2>
+<div class="panel"><div class="mock m3"><div class="c"><div class="img"></div><h3>Amor de mi vida</h3><p>Cuanto mas tiempo pasa, mas te amo.</p><span class="v">VOLVER &#9829;</span></div>
+ <i class="b" style="left:12%;top:22%">12</i><i class="b" style="left:12%;top:60%">13</i><i class="b" style="left:12%;top:70%">14</i><i class="b" style="left:12%;top:86%">15</i></div>
+<table><tr><th>N&ordm;</th><th>Que es</th><th>Donde se cambia</th></tr>
+<tr><td>12</td><td>Foto grande</td><td>Es la <b>misma foto</b> de la mini foto (<b>assets/fotos/NN.jpg</b>)</td></tr>
+<tr><td>13</td><td>Titulo de la tarjeta</td><td>Si la frase tiene <code>titulo: "..."</code> sale ese; si no, sale el texto de la frase</td></tr>
+<tr><td>14</td><td>Mensaje</td><td>El campo <code>mensaje: "..."</code> de esa frase, en la 2&ordf; linea de cada frase en <code>config.js</code></td></tr>
+<tr><td>15</td><td>Boton VOLVER</td><td><code>index.html</code> linea <b>57</b> (cambia la palabra VOLVER)</td></tr>
+<tr><td>&mdash;</td><td>Tarjeta de la FOTO PRINCIPAL</td><td>Titulo: <code>config.js</code> linea <b>40</b> [H] &nbsp;&middot;&nbsp; mensaje: linea <b>41</b> [I]</td></tr></table></div>
+
+<h2>TABLA: que foto lleva cada frase</h2>
+<div class="caja"><p class="n">Cada frase tiene <b>texto</b>, <b>foto</b> y <b>mensaje</b>. Para cambiar la foto de una frase, cambia el numero en <code>foto: "NN"</code>.
+Para cambiar la foto en si, reemplaza el archivo <b>assets/fotos/NN.jpg</b> por tu foto con ese mismo nombre.</p>
+<table><tr><th>Frase (lo que se lee)</th><th>Archivo de foto</th><th>Donde editar</th></tr><tr><td>Te amo</td><td><b>assets/fotos/01.jpg</b></td><td>config.js linea <b>71</b> (texto y foto) y <b>72</b> (mensaje)</td></tr><tr><td>Eres mi todo</td><td><b>assets/fotos/02.jpg</b></td><td>config.js linea <b>73</b> (texto y foto) y <b>74</b> (mensaje)</td></tr><tr><td>Mi amor eterno ∞</td><td><b>assets/fotos/03.jpg</b></td><td>config.js linea <b>75</b> (texto y foto) y <b>76</b> (mensaje)</td></tr><tr><td>Siempre juntos</td><td><b>assets/fotos/04.jpg</b></td><td>config.js linea <b>77</b> (texto y foto) y <b>78</b> (mensaje)</td></tr><tr><td>Nuestro universo</td><td><b>assets/fotos/05.jpg</b></td><td>config.js linea <b>79</b> (texto y foto) y <b>80</b> (mensaje)</td></tr><tr><td>Eres magia</td><td><b>assets/fotos/06.jpg</b></td><td>config.js linea <b>81</b> (texto y foto) y <b>82</b> (mensaje)</td></tr><tr><td>Te adoro</td><td><b>assets/fotos/07.jpg</b></td><td>config.js linea <b>83</b> (texto y foto) y <b>84</b> (mensaje)</td></tr><tr><td>Mi lugar favorito</td><td><b>assets/fotos/08.jpg</b></td><td>config.js linea <b>85</b> (texto y foto) y <b>86</b> (mensaje)</td></tr><tr><td>Amor de mi vida</td><td><b>assets/fotos/09.jpg</b></td><td>config.js linea <b>87</b> (texto y foto) y <b>88</b> (mensaje)</td></tr><tr><td>Contigo siempre</td><td><b>assets/fotos/10.jpg</b></td><td>config.js linea <b>89</b> (texto y foto) y <b>90</b> (mensaje)</td></tr><tr><td>Mi persona favorita</td><td><b>assets/fotos/11.jpg</b></td><td>config.js linea <b>91</b> (texto y foto) y <b>92</b> (mensaje)</td></tr><tr><td>Eres mi hogar</td><td><b>assets/fotos/12.jpg</b></td><td>config.js linea <b>93</b> (texto y foto) y <b>94</b> (mensaje)</td></tr><tr><td>Te elegiría siempre</td><td><b>assets/fotos/13.jpg</b></td><td>config.js linea <b>95</b> (texto y foto) y <b>96</b> (mensaje)</td></tr><tr><td>Mi razón de sonreír</td><td><b>assets/fotos/14.jpg</b></td><td>config.js linea <b>97</b> (texto y foto) y <b>98</b> (mensaje)</td></tr><tr><td>Juntos hasta el final</td><td><b>assets/fotos/15.jpg</b></td><td>config.js linea <b>99</b> (texto y foto) y <b>100</b> (mensaje)</td></tr><tr><td>Eres mi suerte</td><td><b>assets/fotos/16.jpg</b></td><td>config.js linea <b>101</b> (texto y foto) y <b>102</b> (mensaje)</td></tr></table></div>
+
+<h2>RESUMEN: los 4 sitios donde se edita todo</h2>
+<div class="caja"><table>
+<tr><td><b>1. js/config.js</b></td><td>Todos los textos: titulo, subtitulo, boton, frases, mensajes, colores.</td></tr>
+<tr><td><b>2. assets/fotos/</b></td><td>Las mini fotos de las frases: 01.jpg, 02.jpg, 03.jpg...</td></tr>
+<tr><td><b>3. assets/principal/</b></td><td>LA foto del centro del corazon: 01.jpg</td></tr>
+<tr><td><b>4. assets/musica/</b></td><td>La cancion: 01.mp3 &nbsp;(y assets/stickers/ y assets/videos/ si quieres)</td></tr></table></div>
+</main></body></html>

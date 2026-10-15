@@ -1,0 +1,173 @@
+==========================================================================
+  GALAXIA DE AMOR  -  GUIA PARA EDITAR TODO
+==========================================================================
+
+  TIP: abre primero  GUIA-VISUAL.html  (doble clic). Muestra la interfaz
+  con circulos numerados y una tabla que dice archivo y linea de cada texto.
+
+  Que es: una pagina web con una galaxia 3D, un corazon que se forma y
+  tiene TU FOTO PRINCIPAL en el centro, frases tendidas sobre la galaxia
+  con una mini foto encima, stickers, corazones flotantes y musica.
+  Funciona en celular y en computadora.
+
+
+--------------------------------------------------------------------------
+1) LAS 4 COSAS QUE EDITAS  (todo lo demas NO se toca)
+--------------------------------------------------------------------------
+
+  A. js/config.js ........ TODOS los textos (y los colores).
+  B. assets/fotos/ ....... las mini fotos de las frases: 01.jpg, 02.jpg ...
+  C. assets/principal/ ... LA FOTO DEL CENTRO DEL CORAZON: 01.jpg
+  D. assets/musica/ ...... la cancion: 01.mp3
+
+  (Opcionales: assets/stickers/ y assets/videos/)
+
+
+--------------------------------------------------------------------------
+2) MAPA DE CARPETAS
+--------------------------------------------------------------------------
+
+  galaxia-amor/
+  |-- index.html ............ Pagina principal (solo la palabra VOLVER, linea 57)
+  |-- GUIA-VISUAL.html ...... Guia con dibujos y lineas exactas.
+  |-- LEEME-PRIMERO.txt ..... Esta guia.
+  |-- SUBIR-A-INTERNET.txt .. Como publicarla con Netlify o GitHub.
+  |-- ABRIR-EN-WINDOWS.bat .. Doble clic para probarla en tu PC.
+  |
+  |-- js/
+  |     |-- config.js ....... *** AQUI SE EDITAN LOS TEXTOS ***
+  |     |-- (los demas .js: NO tocar)
+  |-- css/estilos.css ....... Diseno visual (no tocar)
+  |-- libs/three.min.js ..... Libreria 3D (no tocar)
+  |
+  |-- assets/ ............... *** AQUI VAN TUS ARCHIVOS ***
+        |-- fotos/ .......... 01.jpg ... 16.jpg  (mini fotos de las frases, hasta 24)
+        |-- principal/ ...... 01.jpg             (la foto del corazon)
+        |-- stickers/ ....... 01.png ... 10.png  (dibujitos, hasta 12)
+        |-- videos/ ......... 01.mp4 ...         (opcional, hasta 4)
+        |-- musica/ ......... 01.mp3             (UNA cancion)
+
+
+--------------------------------------------------------------------------
+3) COMO CAMBIAR LAS FOTOS
+--------------------------------------------------------------------------
+
+  LA FOTO PRINCIPAL (en el centro del corazon)
+    1. Copia tu foto a  assets/principal/
+    2. Nombrala  01.jpg  (si ya existe uno, reemplazalo).
+       Tambien sirve 01.jpeg, 01.png o 01.webp.
+    3. Listo. Aparece sola dentro del corazon cuando este termina de formarse.
+       Se recorta casi cuadrada: elige una foto de los dos, con las caras
+       hacia el centro.
+
+  LAS MINI FOTOS (una por cada frase)
+    1. Copia tus fotos a  assets/fotos/
+    2. Renombralas  01, 02, 03, 04 ... hasta 16 (o hasta las que tengas).
+       Sirven .jpg, .jpeg, .png y .webp (puedes mezclarlos).
+       Ejemplo: 01.jpeg, 02.jpg, 03.png  -> funciona igual.
+    3. Reemplaza las ilustraciones de ejemplo.
+    4. Numeros SIN saltos. Nombres sin tildes, sin "enie" y sin espacios.
+    5. Cada frase usa la foto que dice su campo  foto: "NN"
+       Ejemplo:  { texto: "Te amo", foto: "01", ... }  -> usa assets/fotos/01.jpg
+       Si una frase pide una foto que no existe, el programa le asigna otra:
+       asi NINGUNA frase se queda sin foto.
+    6. Si tienes MAS fotos que frases, las que sobran flotan solas.
+
+  CONSEJO: fotos de menos de 1.5 MB cada una (si no, cargan lento en celular).
+
+
+--------------------------------------------------------------------------
+4) COMO CAMBIAR LOS TEXTOS  ->  archivo  js/config.js
+--------------------------------------------------------------------------
+
+  Abre js/config.js con el Bloc de notas o VS Code. Cada linea editable
+  tiene una flecha  <<<  con su letra. Esta es la lista (con numero de linea):
+
+   LO QUE VES EN PANTALLA                         LINEA   LETRA
+   ---------------------------------------------  ------  -----
+   Estilo de color de toda la galaxia               18     [A]
+   Nombre (vacio = para cualquier pareja)           22     [B]
+   Titulo de la pestana del navegador               24     [C]
+   TITULO GRANDE de la tarjeta de entrada           28     [D]
+   Texto pequeno bajo el dibujito                   29     [E]
+   Ese mismo texto si pones un nombre               30     [F]
+   Texto del BOTON rosa                             31     [G]
+   Titulo de la tarjeta de la foto principal        40     [H]
+   Mensaje de la tarjeta de la foto principal       41     [I]
+   Texto escrito sobre la foto principal            46     [J]
+   Mensaje que se escribe solo (1er renglon)        51     [K]
+   Mensaje que se escribe solo (2do renglon)        52     [K]
+   LAS FRASES (empiezan en la linea 71)            70     [L]
+
+  LAS FRASES: cada frase ocupa 2 lineas dentro de config.js:
+
+      { texto: "Te amo", foto: "01", grande: true,
+        mensaje: "Te amo hoy, manana y todos los dias que vengan." },
+
+      texto ..... lo que se lee tendido sobre la galaxia
+      foto ...... numero de la mini foto ("01" = assets/fotos/01.jpg)
+      titulo .... (opcional) titulo de la tarjeta; si no lo pones, usa el texto
+      mensaje ... el texto que sale al tocar la frase, junto a la foto grande
+      grande .... (opcional) true = la frase sale mas grande
+
+  Para AGREGAR una frase: copia las 2 lineas completas, pegalas debajo de otra
+  frase y cambia texto, foto y mensaje. Para QUITAR una: borra sus 2 lineas.
+  La ULTIMA frase de la lista no lleva coma al final; las demas si.
+
+  REGLA DE ORO: no borres las comillas "" ni las comas , ni las llaves { }.
+  Si algo se rompe, abre el link con  ?debug  al final (ver seccion 7).
+
+
+--------------------------------------------------------------------------
+5) COMO CAMBIAR EL ESTILO / PERSONALIZAR PARA OTRA PERSONA
+--------------------------------------------------------------------------
+
+  ESTILO (linea 18):   tema: "rosa"      galaxia rosa con agujero negro
+                          tema: "cosmos"    galaxia blanca y azulada
+                          tema: "violeta"   galaxia morada
+
+  NOMBRE (linea 22):   nombre: "Iveth"   -> sale en la tarjeta de entrada
+                          ("Para Iveth, con todo mi amor") y como frase grande.
+                          nombre: ""        -> para cualquier pareja.
+
+  TRUCO SIN EDITAR NADA: agrega al final del link
+        tulink.netlify.app/?nombre=Ana
+        tulink.netlify.app/?tema=cosmos
+        tulink.netlify.app/?demo        (modo grabacion: entra solo, sin botones)
+
+
+--------------------------------------------------------------------------
+6) COMO PROBARLA EN TU PC
+--------------------------------------------------------------------------
+
+  OPCION A: doble clic en  ABRIR-EN-WINDOWS.bat  (necesita Python).
+            Deja la ventana negra abierta mientras pruebas.
+  OPCION B: abrir index.html con doble clic. Esta version funciona asi
+            (fotos, frases y stickers son HTML normal). Si algo no carga,
+            usa la opcion A.
+  OPCION C: VS Code + extension "Live Server" -> clic derecho en index.html
+            -> "Open with Live Server".
+
+  En el celular: sube la galaxia a internet (SUBIR-A-INTERNET.txt) y abre el link.
+
+
+--------------------------------------------------------------------------
+7) SI ALGO FALLA
+--------------------------------------------------------------------------
+
+  * Para ver el error en pantalla agrega  ?debug  al link (o a la direccion
+    del archivo): sale una cajita roja abajo con el mensaje.
+  * Pantalla negra y la tarjeta de entrada no sale:
+      casi seguro borraste una coma, comilla o llave en config.js.
+  * "Preparando..." y el boton no se activa: espera 2-3 segundos; si sigue
+      igual, revisa config.js (mismo problema de arriba).
+  * No salen mis fotos: nombres 01.jpg, 02.jpg... dentro de assets/fotos/,
+      sin saltos. La foto del corazon va en assets/principal/ como 01.jpg.
+  * No suena la musica: debe ser assets/musica/01.mp3. Si no hay archivo,
+      el boton de musica no aparece. En celular, el sonido empieza al tocar
+      el boton de entrada; si sale con rayita, tocalo. En iPhone, revisa que
+      no este en modo silencio.
+  * Va lento en un celular viejo: en config.js baja  galaxia -> particulasMovil
+      (ej. 20000) y  corazon -> particulasMovil (ej. 6000).
+  * Los textos se ven muy pequenos/grandes: config.js -> flotantes -> escalaMundo
+      (entre 0.10 y 0.20).

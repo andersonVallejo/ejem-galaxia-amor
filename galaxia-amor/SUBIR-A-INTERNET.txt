@@ -1,0 +1,92 @@
+==========================================================================
+  SUBIR LA GALAXIA A INTERNET  (para tener un link)
+==========================================================================
+
+ANTES DE SUBIR - lista rapida
+  [ ] Cambie la foto principal (assets/principal/01.jpg)
+  [ ] Cambie las mini fotos (assets/fotos/01.jpg ... )
+  [ ] Cambie los textos en js/config.js
+  [ ] Puse la cancion (assets/musica/01.mp3)
+  [ ] Abri index.html y todo se ve bien
+  [ ] Borre las ilustraciones de ejemplo que no uso
+
+
+--------------------------------------------------------------------------
+OPCION 1: NETLIFY  (la mas rapida, 1 minuto, sin instalar nada)
+--------------------------------------------------------------------------
+  1. Entra a  https://app.netlify.com/drop
+  2. Arrastra la CARPETA galaxia-amor completa (la que tiene index.html
+     adentro) a la zona que dice "Drag and drop your site folder".
+  3. Netlify te da un link tipo  https://nombre-raro.netlify.app
+  4. Abrelo en tu celular para comprobar. Mandalo por WhatsApp.
+
+  IMPORTANTE: Netlify muestra un aviso si el sitio es temporal. Si te lo
+  muestra, crea una cuenta gratis / inicia sesion para que el sitio quede
+  permanente (sigue lo que diga la pantalla).
+
+  Cambiar el nombre del link:  Site configuration -> Change site name
+  (queda  https://galaxia-de-amor.netlify.app , si el nombre esta libre).
+
+  Para actualizar fotos o textos: entra a tu sitio en Netlify -> pestana
+  "Deploys" -> arrastra otra vez la carpeta actualizada.
+
+
+--------------------------------------------------------------------------
+OPCION 2: GITHUB PAGES  (gratis y permanente, ideal si ya usas GitHub)
+--------------------------------------------------------------------------
+  1. Entra a  https://github.com  e inicia sesion.
+  2. Arriba a la derecha:  "+"  ->  "New repository".
+       Repository name:  galaxia-amor
+       Marca  "Public".
+       Clic en  "Create repository".
+  3. En la pagina del repositorio nuevo, clic en  "uploading an existing file".
+  4. Abre la carpeta galaxia-amor en tu PC, SELECCIONA TODO LO QUE HAY
+     ADENTRO (index.html, css, js, libs, assets, etc.) y arrastralo a la
+     pagina de GitHub.
+     OJO: tiene que subirse el CONTENIDO. index.html debe quedar en la raiz
+     del repositorio, no dentro de otra carpeta.
+  5. Espera a que terminen de subir y clic en  "Commit changes".
+     (Si te dice que son demasiados archivos, subelo en 2 partes: primero
+     assets/fotos y despues el resto. Cada subida: "Commit changes".)
+  6. Ve a  Settings  ->  Pages  (menu de la izquierda).
+       Source:  "Deploy from a branch"
+       Branch:  "main"   y carpeta  "/ (root)"   ->  Save.
+  7. Espera 1 a 3 minutos y recarga. Arriba aparece tu link:
+       https://TU-USUARIO.github.io/galaxia-amor/
+  8. Para cambiar un texto despues: en el repositorio abre  js/config.js ->
+     icono del lapiz -> editas -> "Commit changes". El link se actualiza solo
+     en 1-2 minutos. Para cambiar fotos: "Add file" -> "Upload files".
+
+  Limites: cada archivo de menos de 25 MB al subirlo desde la web.
+
+
+--------------------------------------------------------------------------
+LINKS UTILES (se agregan al final de tu link)
+--------------------------------------------------------------------------
+   tulink/?demo              Modo grabacion: entra solo, sin botones ni cursor.
+                             Perfecto para grabar la pantalla del celular
+                             y subirlo a TikTok.
+   tulink/?nombre=Ana        Personaliza el nombre sin editar nada.
+   tulink/?tema=cosmos       Cambia el estilo de color (rosa / cosmos / violeta).
+   tulink/?debug             Muestra errores en pantalla si algo falla.
+   Se pueden combinar:       tulink/?demo&tema=violeta
+
+
+--------------------------------------------------------------------------
+SI VAS A VENDERLA O PUBLICARLA EN TIKTOK
+--------------------------------------------------------------------------
+  * MUSICA: usa musica libre de derechos o con licencia comercial. Para TikTok,
+    la musica que agregues al editar el video desde su biblioteca comercial.
+  * FOTOS: las ilustraciones de ejemplo son originales de este proyecto y
+    puedes usarlas en tus demos. Las fotos de tus clientes son de ellos:
+    pide permiso antes de publicarlas.
+  * STICKERS: los de ejemplo son dibujos originales. No uses personajes con
+    derechos (Disney, Sanrio, Marvel...) en una version que vendas.
+  * CODIGO: three.js es de licencia MIT y las tipografias de Google Fonts
+    (Playfair Display y Quicksand) son de licencia abierta (OFL): se pueden
+    usar en proyectos comerciales.
+  * Para tus videos de demo: abre tulink/?demo en el celular (en vertical),
+    graba la pantalla desde que entra hasta que se forma el corazon con la foto,
+    y muestra una frase tocada abriendo su tarjeta. Es lo mas llamativo.
+  * Ofrece a tus clientes: foto principal, hasta 16 frases con foto, mensaje
+    inicial, cancion y nombre. Todo se cambia en config.js y assets/.

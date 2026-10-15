@@ -1,0 +1,6 @@
+VIDEOS  -  recuerdos en movimiento (opcional, hasta 4)
+
+ - Nombres: 01.mp4, 02.mp4 ...  (tambien .webm)
+ - Cortos: menos de 30 segundos y menos de 15 MB cada uno.
+ - Flotan sin sonido; al tocarlos se abren en grande con sonido.
+ - Si la carpeta solo tiene este LEEME, no sale ningun video (esta bien).

@@ -1,0 +1,8 @@
+MUSICA  -  UNA sola cancion de fondo
+
+ - Guarda tu cancion aqui como  01.mp3  (tambien sirve 01.m4a, 01.ogg, 01.wav).
+ - Empieza en el instante en que se toca el boton de entrada y se repite sin parar.
+   Hay un boton de nota musical para pausarla y reanudarla.
+ - Si no hay cancion, el boton de musica no aparece.
+ - Volumen: js/config.js -> musica -> volumen (0 a 1).
+ - IMPORTANTE si vas a vender o publicar: usa musica libre de derechos o con licencia.

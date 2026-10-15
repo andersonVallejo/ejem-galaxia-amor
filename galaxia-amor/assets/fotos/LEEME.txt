@@ -1,0 +1,9 @@
+FOTOS DE LAS FRASES  -  pon aqui tus fotos como 01.jpg, 02.jpg, 03.jpg ... (hasta 24)
+
+ - Se aceptan jpg, jpeg, png y webp (puedes mezclarlos).
+ - Las 16 ilustraciones de ejemplo se reemplazan por las tuyas, con el mismo numero.
+ - Cada FRASE usa una foto: en js/config.js -> frases -> foto: "04" significa que
+   esa frase lleva la foto 04. Si falta, se le asigna otra sola.
+ - Las fotos que no esten en ninguna frase flotan solas.
+ - Numeros sin saltos y sin tildes, enie ni espacios en el nombre.
+ - Tip: fotos de menos de 1.5 MB cada una cargan mas rapido en el celular.

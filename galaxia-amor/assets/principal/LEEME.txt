@@ -1,0 +1,9 @@
+FOTO PRINCIPAL  -  la foto que va DENTRO DEL CORAZON (el centro de todo)
+
+ - Guarda aqui UNA sola foto como  01.jpg  (tambien sirve 01.jpeg, 01.png, 01.webp).
+ - Aparece cuando el corazon termina de formarse, late con el corazon y,
+   al tocarla, abre su tarjeta con titulo y mensaje.
+ - Se recorta en formato casi cuadrado: lo mejor es una foto de los dos,
+   con las caras hacia el centro.
+ - El titulo, el mensaje y el tamano estan en js/config.js -> fotoPrincipal.
+ - Si no hay foto aqui, el corazon solo muestra el texto "Te amo".
